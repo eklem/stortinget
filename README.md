@@ -1,4 +1,4 @@
-# stortinget-dataset
+# stortinget søk
 Datasett fra data.stortinget.no for å lage et interessant søk.
 
 Kilde for data: [Stortinget](https://data.norge.no/nlod/no) - under [Norsk lisens for offentlige data (NLOD) 2.0](https://data.norge.no/nlod/no/2.0)
