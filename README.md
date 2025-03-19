@@ -26,6 +26,10 @@ Foreslåtte entiteter å kunne søke etter:
 3. Bruke listen med oversikt over saker til å hente og indeksere enkeltsaker
 4. Også bruke enkeltsakene til å finne og indeksere representanter som har vært aktive
 
+### Hente inspirasjon?
+
+Kan også se hva som kan være nyttig og enkelt nok å lage fra det som [Holder de ord](https://www.dagsavisen.no/oslo/nyheter/2020/02/03/holder-de-ord-legger-ned/) har laget.
+
 ## ~~Proxy~~
 
 ~~For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).~~
