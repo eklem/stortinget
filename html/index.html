@@ -20,7 +20,7 @@
     <pre id="sak"></pre>
 
     <script>
-      fetch('https://proxy.klemespen.com:8080/https://data.stortinget.no/eksport/sak?sakid=93583&format=json')
+      fetch('https://data.stortinget.no/eksport/sak?sakid=93583&format=json')
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error, status = ${response.status}`)
@@ -35,7 +35,7 @@
           const span = document.createElement("span")
           document.getElementById('sak').innerHTML= `Error: ${error.message}`
         })
-      fetch('https://proxy.klemespen.com:8080/https://data.stortinget.no/eksport/saker?sesjonid=2022-2023&format=json')
+      fetch('https://data.stortinget.no/eksport/saker?sesjonid=2022-2023&format=json')
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error, status = ${response.status}`)
