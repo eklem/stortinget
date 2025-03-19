@@ -9,7 +9,7 @@ Trenger en søkeinformasjons-modell som viser partier, representanter og saker o
 
 ## Søkeinformasjons-modell
 
-![Tegning av søkeinformasjons-modell](https://github.com/eklem/stortinget/blob/trunk/search-information-model-v01.png)
+![Tegning av søkeinformasjons-modell](https://raw.githubusercontent.com/eklem/stortinget/refs/heads/trunk/search-information-model-v01.png)
 
 Foreslåtte entiteter å kunne søke etter:
 
@@ -19,7 +19,7 @@ Foreslåtte entiteter å kunne søke etter:
 
 ### Første versjon
 
-![Tegning av nedskalert søkeinformasjons-modell](https://github.com/eklem/stortinget/blob/trunk/search-information-model-v02.png)
+![Tegning av nedskalert søkeinformasjons-modell](https://raw.githubusercontent.com/eklem/stortinget/refs/heads/trunk/search-information-model-v02.png)
 
 1. Hente liste over sesjoner.
 2. La brukeren velge en sesjon og finne saker i denne sesjonen
