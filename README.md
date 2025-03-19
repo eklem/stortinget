@@ -3,7 +3,7 @@ Datasett fra data.stortinget.no for å lage et interessant søk.
 
 Kilde for data: [Stortinget](https://data.norge.no/nlod/no) - under [Norsk lisens for offentlige data (NLOD) 2.0](https://data.norge.no/nlod/no/2.0)
 
-Start med å velge `stortings-periode` og indekser. Dette skal laste ned data fra data.stortinget.no via noen APIer, transformere og indeksere dem. Så skal du kunne søke i disse dataene.
+Start med å velge `stortings-sesjon` og indekser. Dette skal laste ned data fra data.stortinget.no via noen APIer, transformere og indeksere dem. Så skal du kunne søke i disse dataene.
 
 Trenger en søkeinformasjons-modell som viser partier, representanter og saker og metadataene + APIene som er tenkt brukt og vist.
 
