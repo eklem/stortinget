@@ -26,9 +26,11 @@ Foreslåtte entiteter å kunne søke etter:
 3. Bruke listen med oversikt over saker til å hente og indeksere enkeltsaker
 4. Også bruke enkeltsakene til å finne og indeksere representanter som har vært aktive
 
-## Proxy
+## ~~Proxy~~
 
-For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).
+~~For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).~~
+
+Det er en bug hos data.stortinget.no som vil bli fikset.
 
 ## API-innhold
 
