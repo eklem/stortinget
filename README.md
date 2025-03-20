@@ -34,7 +34,7 @@ Kan også se hva som kan være nyttig og enkelt nok å lage fra det som [Holder 
 
 ~~For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).~~
 
-Det er en bug hos data.stortinget.no som vil bli fikset.
+Det er en bug hos data.stortinget.no som vil bli fikset. Sjekk [https://eklem.github.io/stortinget/html/](https://eklem.github.io/stortinget/html/) for å se om det virker eller ikke.
 
 ## API-innhold
 
