@@ -1,6 +1,10 @@
 # stortinget søk
 Datasett fra data.stortinget.no for å lage et interessant søk.
 
+![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/c7d6af67-c82c-4370-a97b-0ec6e3d05085)
+Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar.
+
+
 Kilde for data: [Stortinget](https://data.norge.no/nlod/no) - under [Norsk lisens for offentlige data (NLOD) 2.0](https://data.norge.no/nlod/no/2.0)
 
 Start med å velge `stortings-sesjon` og indekser. Dette skal laste ned data fra data.stortinget.no via noen APIer, transformere og indeksere dem. Så skal du kunne søke i disse dataene.
