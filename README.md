@@ -72,3 +72,18 @@ https://data.stortinget.no/eksport/representanter?stortingsperiodeid=2021-2025&f
 ### Partier
 
 https://data.stortinget.no/eksport/allepartier?format=json
+
+
+Dev setup
+Live Preview
+
+Installer VSCode plugin: Live Preview av Microsoft og bruk VSCode port forwarding.
+
+shift + command + p
+
+```console
+Live Preview: Start Server
+Live Preview: Start Server Logging
+```
+
+Under ports tab'en i server logging window, sett port forwarding på port 3000.
