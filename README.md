@@ -46,8 +46,9 @@ Ser så langt ut som interessante data. Litt vanskelig å skjønne hvordan voter
 
 ### Stortingsperioder og sesjoner
 
-https://data.stortinget.no/eksport/stortingsperioder?format=json
-https://data.stortinget.no/eksport/sesjoner?format=json
+Stortingsperioder: https://data.stortinget.no/eksport/stortingsperioder?format=json
+
+Stortingssesjoner: https://data.stortinget.no/eksport/sesjoner?format=json
 
 ### Saker
 
