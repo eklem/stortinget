@@ -1,7 +1,7 @@
 # stortinget søk
 Datasett fra data.stortinget.no for å lage et interessant søk.
 
-![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/c7d6af67-c82c-4370-a97b-0ec6e3d05085)
+![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/8db21aca-93f8-44fe-bce5-af5c0936f6b0)
 Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar.
 
 
