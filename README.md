@@ -1,7 +1,7 @@
 # stortinget søk
 Datasett fra data.stortinget.no for å lage et interessant søk.
 
-![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/c7d6af67-c82c-4370-a97b-0ec6e3d05085)
+![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/8db21aca-93f8-44fe-bce5-af5c0936f6b0)
 Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar.
 
 
@@ -38,7 +38,7 @@ Kan også se hva som kan være nyttig og enkelt nok å lage fra det som [Holder 
 
 ~~For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).~~
 
-Det er en bug hos data.stortinget.no som vil bli fikset. Sjekk [https://eklem.github.io/stortinget/html/](https://eklem.github.io/stortinget/html/) for å se om det virker eller ikke.
+~~Det er en bug hos data.stortinget.no som vil bli fikset.~~ Bug er fikset. Du kan se data lastet ned direkte på [https://eklem.github.io/stortinget/html/](https://eklem.github.io/stortinget/html/).
 
 ## API-innhold
 
@@ -46,8 +46,9 @@ Ser så langt ut som interessante data. Litt vanskelig å skjønne hvordan voter
 
 ### Stortingsperioder og sesjoner
 
-https://data.stortinget.no/eksport/stortingsperioder?format=json
-https://data.stortinget.no/eksport/sesjoner?format=json
+Stortingsperioder: https://data.stortinget.no/eksport/stortingsperioder?format=json
+
+Stortingssesjoner: https://data.stortinget.no/eksport/sesjoner?format=json
 
 ### Saker
 
