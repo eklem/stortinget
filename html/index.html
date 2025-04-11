@@ -13,6 +13,9 @@
   <body>
     <h1>Fetch json from data.stortinget.no example</h1>
 
+    <h2>Sesjoner</h2>
+    <pre id="sesjoner"></pre>
+
     <h2>Saksliste</h2>
     <pre id="saksliste"></pre>
 
@@ -20,6 +23,21 @@
     <pre id="sak"></pre>
 
     <script>
+      fetch('http://data.stortinget.no/eksport/sesjoner&format=json')
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error, status = ${response.status}`)
+          }
+          return response.json()
+        })
+        .then((data) => {
+          console.log(JSON.stringify(data))
+          document.getElementById('sesjoner').innerHTML= JSON.stringify(data, false , 2)
+        })
+        .catch((error) => {
+          const span = document.createElement("span")
+          document.getElementById('sesjoner').innerHTML= `Error: ${error.message}`
+        })
       fetch('https://data.stortinget.no/eksport/sak?sakid=93583&format=json')
         .then((response) => {
           if (!response.ok) {

@@ -1,0 +1,180 @@
+{
+  "respons_dato_tid": "/Date(1742621276268+0100)/",
+  "versjon": "1.6",
+  "dokumentgruppe": 7,
+  "emne_liste": [
+    {
+      "respons_dato_tid": "/Date(1742621276862+0100)/",
+      "versjon": "1.6",
+      "er_hovedemne": false,
+      "hovedemne_id": 151,
+      "id": 25,
+      "navn": "Regjeringen",
+      "underemne_liste": []
+    },
+    {
+      "respons_dato_tid": "/Date(1742621276862+0100)/",
+      "versjon": "1.6",
+      "er_hovedemne": false,
+      "hovedemne_id": 151,
+      "id": 26,
+      "navn": "Stortingsrepresentanter",
+      "underemne_liste": []
+    },
+    {
+      "respons_dato_tid": "/Date(1742621276862+0100)/",
+      "versjon": "1.6",
+      "er_hovedemne": false,
+      "hovedemne_id": 5,
+      "id": 95,
+      "navn": "Lønn og inntekt",
+      "underemne_liste": []
+    }
+  ],
+  "ferdigbehandlet": true,
+  "henvisning": "Innst. 500 S (2022-2023)",
+  "id": 94625,
+  "innstillingstekst": "Innstilling fra Stortingets presidentskap om godtgjørelse for stortingsrepresentanter og regjeringsmedlemmer og om Representantforslag fra stortingsrepresentantene Bjørnar Moxnes og Marie Sneve Martinussen om godtgjørelser for nasjonale politikere som gjør at folkevalgte ikke rykker fra folk som har valgt oss",
+  "komite": {
+    "respons_dato_tid": "/Date(1742621056587+0100)/",
+    "versjon": "1.6",
+    "id": "PRES",
+    "navn": "Stortingets presidentskap"
+  },
+  "korttittel": "Godtgjørelse for stortingsrepresentanter og regjeringsmedlemmer",
+  "kortvedtak": "Stortinget har behandlet innstilling fra Stortingets presidentskap om godtgjørelse for stortingsrepresentanter og regjeringsmedlemmer, og om representantforslag fra stortingsrepresentantene Bjørnar Moxnes og Marie Sneve Martinussen. Stortinget vedtok følgende godtgjørelser med virkning fra 1. mai 2023: \r\n\r\nStortingsrepresentanter kr 1 107 190 per år, \r\nregjeringsmedlemmer kr 1 580 186 per år,\r\nStatsminister kr 1 945 077 per år.\r\n\r\nRepresentantforslaget ble ikke vedtatt.",
+  "parentestekst": null,
+  "publikasjon_referanse_liste": [
+    {
+      "respons_dato_tid": "/Date(1742621277174+0100)/",
+      "versjon": "1.6",
+      "eksport_id": "inns-202223-500s",
+      "lenke_tekst": "Innst. 500 S (2022-2023)",
+      "lenke_url": "//www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Innstillinger/Stortinget/2022-2023/inns-202223-500s/",
+      "type": 6,
+      "undertype": "storting"
+    },
+    {
+      "respons_dato_tid": "/Date(1742621277768+0100)/",
+      "versjon": "1.6",
+      "eksport_id": "refs-202223-06-15",
+      "lenke_tekst": "Stortingsreferat 15.06.2023",
+      "lenke_url": "//www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Referater/Stortinget/2022-2023/refs-202223-06-15/3",
+      "type": 10,
+      "undertype": "storting"
+    },
+    {
+      "respons_dato_tid": "/Date(1742621277768+0100)/",
+      "versjon": "1.6",
+      "eksport_id": "refs-202223-06-15",
+      "lenke_tekst": "Stortingsreferat 15.06.2023",
+      "lenke_url": "//www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Referater/Stortinget/2022-2023/refs-202223-06-15/voteringer#150623-3",
+      "type": 10,
+      "undertype": "storting"
+    }
+  ],
+  "sak_nummer": 500,
+  "sak_opphav": {
+    "respons_dato_tid": "/Date(1742621276268+0100)/",
+    "versjon": "1.6",
+    "forslagstiller_liste": []
+  },
+  "sak_relasjon_liste": [
+    {
+      "respons_dato_tid": "/Date(1742621277112+0100)/",
+      "versjon": "1.6",
+      "relasjon_type": 3,
+      "relatert_sak_id": 93583,
+      "relatert_sak_korttittel": "Representantforslag om godtgjørelser for nasjonale politikere som gjør at folkevalgte ikke rykker fra folk som har valgt oss"
+    }
+  ],
+  "sak_sesjon": "2022-2023",
+  "saksgang": {
+    "respons_dato_tid": "/Date(1742621277174+0100)/",
+    "versjon": "1.6",
+    "id": "INS",
+    "navn": "Innstillingssaker",
+    "saksgang_steg_liste": [
+      {
+        "respons_dato_tid": "/Date(1742621277174+0100)/",
+        "versjon": "1.6",
+        "id": "KOMBEH",
+        "navn": "Komitebehandling",
+        "saksgang_hendelse_liste": [
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "01.01.0001 00:00:00",
+            "id": "KOMITE",
+            "publikasjonsReferanse": null,
+            "sorterings_nummer": 60000,
+            "stegnummer": "1"
+          },
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "08.06.2023 00:00:00",
+            "id": "AVGITT",
+            "publikasjonsReferanse": "http://www.stortinget.no/inns/2022/inns-202223-500.html",
+            "sorterings_nummer": 110000,
+            "stegnummer": "1"
+          }
+        ],
+        "steg_nummer": 1,
+        "uaktuell": false
+      },
+      {
+        "respons_dato_tid": "/Date(1742621277174+0100)/",
+        "versjon": "1.6",
+        "id": "DEBATT",
+        "navn": "Debatt og vedtak",
+        "saksgang_hendelse_liste": [
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "01.01.0001 00:00:00",
+            "id": "LOSEFORS",
+            "publikasjonsReferanse": null,
+            "sorterings_nummer": 126000,
+            "stegnummer": "2"
+          },
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "15.06.2023 00:00:00",
+            "id": "BEHS",
+            "publikasjonsReferanse": "http://www.stortinget.no/stid/2022/si230615-03.html",
+            "sorterings_nummer": 130000,
+            "stegnummer": "2"
+          },
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "15.06.2023 00:00:00",
+            "id": "VOT",
+            "publikasjonsReferanse": null,
+            "sorterings_nummer": 135500,
+            "stegnummer": "2"
+          },
+          {
+            "respons_dato_tid": "/Date(1742621277174+0100)/",
+            "versjon": "1.6",
+            "dato": "01.01.0001 00:00:00",
+            "id": "VEDTAK",
+            "publikasjonsReferanse": null,
+            "sorterings_nummer": 135600,
+            "stegnummer": "2"
+          }
+        ],
+        "steg_nummer": 2,
+        "uaktuell": false
+      }
+    ]
+  },
+  "saksordfoerer_liste": [],
+  "status": 1,
+  "stikkord_liste": [],
+  "tittel": "Godtgjørelse for stortingsrepresentanter og regjeringsmedlemmer",
+  "type": 2,
+  "vedtakstekst": "Vedtak i samsvar med innstillingen"
+}
