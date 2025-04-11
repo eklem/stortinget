@@ -23,7 +23,7 @@
     <pre id="sak"></pre>
 
     <script>
-      fetch('http://data.stortinget.no/eksport/sesjoner&format=json')
+      fetch('https://data.stortinget.no/eksport/sesjoner?format=json')
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error, status = ${response.status}`)
