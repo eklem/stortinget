@@ -1,5 +1,5 @@
 # stortinget søk
-Datasett fra data.stortinget.no for å lage et interessant søk.
+Forsøk på å lage et brukbart søk for saker, politikere og avstemninger på Stortinget.
 
 ![Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar](https://github.com/user-attachments/assets/8db21aca-93f8-44fe-bce5-af5c0936f6b0)
 Foreløpig design som viser hvordan gjøre en Stortings-sesjon søkbar.
