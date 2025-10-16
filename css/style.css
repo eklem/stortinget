@@ -40,8 +40,8 @@ footer, header, hgroup, menu, nav, section {
 header {
   color: #ffffff;
   background:#702146;
-  padding:15px 15px 15px 15px;
-  height: 78px;
+  padding:20px 20px 20px 20px;
+  height: 88px;
   }
 
 h1 {
@@ -56,6 +56,8 @@ h1 {
   background-image: url("../img/icon-search-logo.png");
   background-size: 48px 48px;
   background-repeat: no-repeat;
+  display: flex;
+  align-items:center;
 }
 
 body {
@@ -63,7 +65,7 @@ body {
   background:#ffffff;
   margin:0;
   font-family: "Ubuntu Sans", sans-serif;
-  font-size:medium;
+  font-size:large;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -71,7 +73,7 @@ body {
 }
 
 #body {
-  padding:15px 15px 15px 15px;
+  padding:20px 20px 20px 20px;
 }
 
 #search {
@@ -80,9 +82,15 @@ body {
   border-left: 0;
   border-top: 0;
   border-right: 0;
+  padding:8px;
   background-image: url("../img/icon-search.png");
   background-size: 32px 32px;
   background-repeat: no-repeat;
-  background-position-x: right;
-  background-position-y: top;
+  background-position-x: right 8px;
+  background-position-y: top 8px;
+}
+
+#search:focus {
+  outline: none;
+  background-color: #f5f3f1;
 }
