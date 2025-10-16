@@ -41,7 +41,8 @@ header {
   color: #ffffff;
   background:#702146;
   padding:15px 15px 15px 15px;
-}
+  height: 78px;
+  }
 
 h1 {
   height:48px;
@@ -55,12 +56,33 @@ h1 {
   background-image: url("../img/icon-search-logo.png");
   background-size: 48px 48px;
   background-repeat: no-repeat;
-   display: flex;
-   align-items:center;
 }
 
 body {
   color:#000000;
   background:#ffffff;
   margin:0;
+  font-family: "Ubuntu Sans", sans-serif;
+  font-size:medium;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+#body {
+  padding:15px 15px 15px 15px;
+}
+
+#search {
+  border-bottom: 2px solid #702146;
+  border-radius: 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  background-image: url("../img/icon-search.png");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: top;
 }

@@ -5,7 +5,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kelpui@1/css/kelp.css">
     <link href="./css/style.css" rel="stylesheet" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/kelpui@1/js/kelp.js"></script>
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-7aDfx2UrJAkPxlePlYVaW.js"></script>
     <script>
@@ -18,5 +20,12 @@
     <header>
       <h1>Stortinget</h1>
     </header>
+    <div id="body">
+      <search>
+        <form action="./search/">
+          <input type="search" id="search" name="q" />
+        </form>
+      </search>
+    </div>
   </body>
 </html>
