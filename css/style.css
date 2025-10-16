@@ -92,11 +92,13 @@ search {
   background-image: url("../img/icon-search.png");
   background-size: 32px 32px;
   background-repeat: no-repeat;
-  background-position-x: right 8px;
-  background-position-y: top 6px;
+  background-position: right 8px top 6px;
 }
 
+
+/* Fix this later so that background-image is set to none only when query.length > 0 */
 #search:focus {
   outline: none;
   background-color: #f5f3f1;
+  background-image: none;
 }
