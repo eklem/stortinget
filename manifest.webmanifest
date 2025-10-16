@@ -1,0 +1,22 @@
+{
+  "short_name": "Stortinget søk",
+  "name": "Søk på saker fra Stortinget",
+  "description": "Søkemotor som lever i nettleseren din. Du velger selv hva du vil at skal være søkbart.",
+  "icons": [
+    {
+      "src": "img/icon-search-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icon-search-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "scope": "/stortinget/",
+  "theme_color": "#702146"
+}
