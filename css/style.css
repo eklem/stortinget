@@ -71,6 +71,12 @@ body {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+search {
+  position: sticky;
+  top: 0px;
+  padding:20px 20px 20px 20px;
+  background: #ffffff;
+}
 
 #body {
   padding:20px 20px 20px 20px;
