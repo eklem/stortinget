@@ -87,7 +87,7 @@ body {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position-x: right 8px;
-  background-position-y: top 8px;
+  background-position-y: top 6px;
 }
 
 #search:focus {
