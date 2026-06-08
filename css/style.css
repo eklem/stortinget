@@ -46,8 +46,8 @@ header {
 
 h1 {
   height:48px;
-  padding-left:63px;
-  font-family: "Ubuntu Sans", sans-serif;
+  font-family: "Fira sans", sans-serif;
+  padding-left:55px;
   font-size:xx-large;
   font-optical-sizing: auto;
   font-weight: 200;
@@ -57,19 +57,19 @@ h1 {
   background-size: 48px 48px;
   background-repeat: no-repeat;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
 body {
   color:#000000;
   background:#ffffff;
   margin:0;
-  font-family: "Ubuntu Sans", sans-serif;
+  font-family: "Fira sans", sans-serif;
   font-size:large;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+  
 }
 search {
   position: sticky;
