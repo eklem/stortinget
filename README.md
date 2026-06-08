@@ -93,6 +93,6 @@ Live Preview: Start Server
 Live Preview: Start Server Logging
 ```
 
-### Port forwarding with VSCode
+### Port forwarding med VSCode
 
 Under ports tab'en i server logging window, sett port forwarding på port 3000.
