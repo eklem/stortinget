@@ -52,7 +52,6 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
   background-image: url("../img/icon-search-logo.png");
   background-size: 48px 48px;
   background-repeat: no-repeat;
@@ -69,7 +68,6 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  
 }
 search {
   position: sticky;
@@ -99,6 +97,7 @@ search {
 /* Fix this later so that background-image is set to none only when query.length > 0 */
 #search:focus {
   outline: none;
+  color:#000000;
   background-color: #f5f3f1;
   background-image: none;
 }
