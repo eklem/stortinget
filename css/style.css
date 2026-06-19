@@ -81,7 +81,7 @@ search {
 }
 
 #search {
-  border-bottom: 2px solid #702146;
+  border-bottom: 1px solid #702146;
   border-radius: 0;
   border-left: 0;
   border-top: 0;
@@ -91,6 +91,7 @@ search {
   background-size: 32px 32px;
   background-repeat: no-repeat;
   background-position: right 8px top 6px;
+  font-weight:300;
 }
 
 
