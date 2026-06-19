@@ -1,11 +1,11 @@
 <!DOCTYPE html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials" />
     <link rel="icon" href="./img/icon-search-128.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kelpui@1/css/kelp.css">
     <link href="./css/style.css" rel="stylesheet" />
     <script type="module" src="https://cdn.jsdelivr.net/npm/kelpui@1/js/kelp.js"></script>
@@ -14,6 +14,22 @@
     <script>
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
+    </script>
+    <script type="module">
+      if ("serviceWorker" in navigator) {
+      // Register a service worker hosted at the root of the
+      // site using the default scope.
+      navigator.serviceWorker.register("./js/service-worker.js").then(
+        (registration) => {
+          console.log("Service worker registration succeeded:", registration);
+        },
+        (error) => {
+          console.error(`Service worker registration failed: ${error}`);
+        },
+      );
+    } else {
+      console.error("Service workers are not supported.");
+    }
     </script>
     <title>Stortinget søk</title>
   </head>
@@ -29,6 +45,7 @@
       <p>some result</p>
       <p>some result</p>
       <p>some result</p>
+      <p>more results ftw!</p>
       <p>some result</p>
       <p>some result</p>
       <p>some result</p>
@@ -47,7 +64,7 @@
       <p>some result</p>
       <p>some result</p>
       <p>some result</p>
-      <p>some result</p>
+      <p>some resssult</p>
       <p>some result</p>
       <p>some result</p>
       <p>some result</p>
@@ -70,5 +87,6 @@
       <p>some result</p>
       <p>some result</p>
     </div>
+    <script type="module" src="./js/app.js"></script>
   </body>
 </html>
