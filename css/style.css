@@ -47,10 +47,10 @@ header {
 h1 {
   height:48px;
   font-family: "Fira sans", sans-serif;
-  padding-left:55px;
+  padding-left:60px;
   font-size:xx-large;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 100;
   font-style: normal;
   background-image: url("../img/icon-search-logo.png");
   background-size: 48px 48px;
