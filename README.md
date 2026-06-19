@@ -82,6 +82,14 @@ https://data.stortinget.no/eksport/allepartier?format=json
 
 
 ## Dev setup
+### Server
+
+In root folder of project:
+```console
+npx serve
+```
+
+
 ### Live Preview
 
 Installer VSCode plugin: Live Preview av Microsoft og bruk VSCode port forwarding.
@@ -94,5 +102,11 @@ Live Preview: Start Server Logging
 ```
 
 ### Port forwarding med VSCode
+
+shift + command + p
+
+```console
+Live Preview: Start Server Logging
+```
 
 Under ports tab'en i server logging window, sett port forwarding på port 3000.
