@@ -12,6 +12,7 @@ const getSessions = function () {
     .then((data) => {
       console.log(JSON.stringify(data))
       document.getElementById('sesjoner').innerHTML= JSON.stringify(data, false , 2)
+      return(data)
     })
     .catch((error) => {
       const span = document.createElement("span")
