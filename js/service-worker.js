@@ -11,16 +11,10 @@ const getSessions = function () {
     })
     .then((data) => {
       console.log(JSON.stringify(data))
-      document.getElementById('sesjoner').innerHTML= JSON.stringify(data, false , 2)
-      return()
     })
     .catch((error) => {
-      const span = document.createElement("span")
-      document.getElementById('sesjoner').innerHTML= `Error: ${error.message}`
+      console.dir(error)
     })
 }
 
-self.addEventListener('activated', function (event) {
-  console.log('Service Worker: Hello world!')
-  getSesssions()
-})
+console.log('after')

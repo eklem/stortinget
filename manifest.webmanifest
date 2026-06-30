@@ -4,17 +4,17 @@
   "description": "Søk på saker fra Stortinget",
   "icons": [
     {
-      "src": "/img/icon-search-192.png",
+      "src": "./img/icon-search-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/icon-search-512.png",
+      "src": "./img/icon-search-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "background_color": "#ffffff",
   "display": "fullscreen",
   "scope": "/",
