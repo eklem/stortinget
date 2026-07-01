@@ -1,0 +1,34 @@
+{
+  "name": "stortinget",
+  "version": "0.0.1",
+  "dependencies": {
+    "kelpui": "^1.17.2"
+  },
+  "description": "Forsøk på å lage et brukbart søk for saker, politikere og avstemninger på Stortinget. ",
+  "files": [
+    "./dist",
+    "./rollup.config.js"
+  ],
+  "scripts": {
+    "build": "cp ./node_modules/kelpui/css/kelp.css ./css && cp ./node_modules/kelpui/js/kelp.js ./js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "søk",
+    "Stortinget",
+    "politikere",
+    "partier",
+    "avstemning"
+  ],
+  "homepage": "https://github.com/eklem/stortinget-dataset-search#readme",
+  "bugs": {
+    "url": "https://github.com/eklem/stortinget-dataset-search/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eklem/stortinget-dataset-search.git"
+  },
+  "license": "MIT",
+  "author": "Espen Klem",
+  "main": "index.html"
+}

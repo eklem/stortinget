@@ -3,30 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials" />
     <link rel="icon" href="./img/icon-search-128.png" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kelpui@1/css/kelp.css">
+    <link href="./css/kelp.css" rel="stylesheet" >
     <link href="./css/style.css" rel="stylesheet" />
-    <script type="module" src="https://cdn.jsdelivr.net/npm/kelpui@1/js/kelp.js"></script>
+    <script type="module" src="./js/kelp.js"></script>
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-7aDfx2UrJAkPxlePlYVaW.js"></script>
     <script>
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
-    </script>
-    <script type="module">
-      if ("serviceWorker" in navigator) {
-      // Register a service worker hosted at the root of the
-      // site using the default scope.
-      navigator.serviceWorker.register("./js/service-worker.js").then(
-        (registration) => {
-          console.log("Service worker registration succeeded:", registration);
-        },
-        (error) => {
-          console.error(`Service worker registration failed: ${error}`);
-        },
-      );
-    } else {
-      console.error("Service workers are not supported.");
-    }
     </script>
     <title>Stortinget søk</title>
   </head>
