@@ -16,4 +16,18 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
+/* ### BroadcastChannel connection */
+const bc = new BroadcastChannel('eklem.github.io/stortinget')
+
 console.log('Then hello app module!')
+
+/* ### Receiving messages */
+bc.onmessage = (event) => {
+  console.log('app.js receiving message:');
+  console.log(event);
+}
+
+onclick = (event) => {
+  bc.postMessage('Klikk fra app.js')
+}
+
