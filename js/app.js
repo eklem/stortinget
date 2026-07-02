@@ -27,7 +27,7 @@ bc.onmessage = (event) => {
   console.log(event);
 }
 
-onclick = (event) => {
+const button = document.querySelector('button');
+button.addEventListener("click", (event) => {
   bc.postMessage('Klikk fra app.js')
-}
-
+})
