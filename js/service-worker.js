@@ -18,3 +18,8 @@ const getSessions = function () {
 }
 
 console.log('after')
+
+addEventListener('activate', function (event) {
+  console.log('Service Worker: Hello world!')
+  getSesssions()
+})
