@@ -17,7 +17,7 @@ if ("serviceWorker" in navigator) {
 }
 
 /* ### BroadcastChannel connection */
-const bc = new BroadcastChannel('eklem.github.io/stortinget')
+const bc = new BroadcastChannel('stortinget')
 
 console.log('Then hello app module!')
 

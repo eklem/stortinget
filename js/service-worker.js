@@ -1,7 +1,7 @@
 console.log('Service Worker: Hello world without an event listener!')
 
 /* ### BroadcastChannel connection */
-const bc = new BroadcastChannel('eklem.github.io/stortinget')
+const bc = new BroadcastChannel('stortinget')
 
 /* ### get Sessions, how to activate it can be figured out later. Check if new day or day past thisSession etc. */
 const getSessions = function (url) {
