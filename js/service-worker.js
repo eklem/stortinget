@@ -30,11 +30,12 @@ addEventListener('activate', function (event) {
       return response.json()
     })
     .then((data) => {
-      console.log('fetched data inside event listener:')
+      console.log('fetched data inside event:')
       console.log(JSON.stringify(data))
+      
+      getSesssions()
     })
     .catch((error) => {
       console.dir(error)
     })
-  getSesssions()
 })
