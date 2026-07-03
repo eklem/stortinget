@@ -16,18 +16,21 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
-/* ### BroadcastChannel connection */
-const bc = new BroadcastChannel('stortinget')
+/* ### BroadcastChannel connections */
+const broadcastMetaAppSw = new BroadcastChannel('meta_app_serviceworker')
+const broadcastMetaSwApp = new BroadcastChannel('meta_serviceworker_app')
+const broadcastQueryAppSw = new BroadcastChannel('query_app_serviceworker')
+const broadcastResultSwApp = new BroadcastChannel('result_serviceworke_app')
 
 console.log('Then hello app module!')
 
 /* ### Receiving messages */
-bc.onmessage = (event) => {
+broadcastMetaSwApp.onmessage = (event) => {
   console.log('app.js receiving message:');
   console.log(event);
 }
 
 const button = document.querySelector('button');
 button.addEventListener("click", (event) => {
-  bc.postMessage('Klikk fra app.js')
+  broadcastMetaAppSw.postMessage('Klikk fra app.js')
 })
