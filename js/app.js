@@ -27,7 +27,7 @@ console.log('Then hello app module!')
 /* ### Receiving messages */
 broadcastMetaSwApp.onmessage = (event) => {
   console.log('app.js receiving message:');
-  console.log(event);
+  console.log(event.data);
 }
 
 const button = document.querySelector('button');
