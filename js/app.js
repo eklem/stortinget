@@ -25,9 +25,9 @@ const broadcastResultSwApp = new BroadcastChannel('result_serviceworke_app')
 console.log('Then hello app module!')
 
 /* ### Receiving messages */
-broadcastMetaSwApp.onmessage = (event) => {
+broadcastMetaSwApp.onmessage = (message) => {
   console.log('app.js receiving message:');
-  console.log(event.data);
+  console.log(message.data);
 }
 
 const button = document.querySelector('button');

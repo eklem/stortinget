@@ -28,9 +28,9 @@ const getSessions = function (url) {
 console.log('after')
 
 /* ### Receiving messages */
-broadcastMetaAppSw.onmessage = (event) => {
+broadcastMetaAppSw.onmessage = (message) => {
   console.log('service-worker.js receiving message:');
-  console.log(event);
+  console.log(message);
   console.log('Henter sesjoner fra stortinget med getSessions()');
   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
 }

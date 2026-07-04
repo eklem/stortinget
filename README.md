@@ -48,37 +48,7 @@ Kan også se hva som kan være nyttig og enkelt nok å lage fra det som [Holder 
 
 ## API-innhold
 
-Ser så langt ut som interessante data. Litt vanskelig å skjønne hvordan voteringer-APIene fungere og hvordan aggregere dette. Særlig for saker som blir enstemmig vedtatt.
-
-### Stortingsperioder og sesjoner
-
-Stortingsperioder: https://data.stortinget.no/eksport/stortingsperioder?format=json
-
-Stortingssesjoner: https://data.stortinget.no/eksport/sesjoner?format=json
-
-### Saker
-
-https://data.stortinget.no/eksport/saker?sesjonid=2022-2023&format=json
-
-### Sak
-
-https://data.stortinget.no/eksport/sak?sakid=94625&format=json
-
-Kobling mellom `sak` og `votering_id`:
-
-https://data.stortinget.no/eksport/voteringer?sakid=94625&format=json
-
-Så du kan se hva en representant stemte:
-
-https://data.stortinget.no/eksport/voteringsresultat?voteringid=21349&format=json
-
-### Representanter
-
-https://data.stortinget.no/eksport/representanter?stortingsperiodeid=2021-2025&format=json
-
-### Partier
-
-https://data.stortinget.no/eksport/allepartier?format=json
+[Oversikt over alle API'ene og eksempler på data returnert](data-APIer.md)
 
 
 ## Dev setup
