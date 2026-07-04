@@ -1,4 +1,4 @@
-[Alle API'er](data-APIer.md) | [API for Stortingsperioder](data-stortingsperioder.md) | [API for saker](data-saker.md)
+[Alle API'er](./data-APIer.md) | [API for Stortingsperioder](./data-stortingsperioder.md) | [API for saker](./data-saker.md)
 
 # Stortings-sesjoner
 

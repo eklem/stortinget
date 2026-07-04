@@ -4,13 +4,13 @@ Ser så langt ut som interessante data. Litt vanskelig å skjønne hvordan voter
 
 ## Stortingsperioder og sesjoner
 
-[Stortingsperioder](data-stortingsperioder.md) - Perioder stortingspolitikere er valgt for.
+[Stortingsperioder](./data-stortingsperioder.md) - Perioder stortingspolitikere er valgt for.
 
-[Sesjoner](data-sesjoner.md) - En av fire arbeidsperioder for et valgt storting.
+[Sesjoner](./data-sesjoner.md) - En av fire arbeidsperioder for et valgt storting.
 
 ## Saker
 
-[Saker][data-saker.md] - Liste over saker for en sesjon.
+[Saker](./data-saker.md) - Liste over saker for en sesjon.
 
 ## Sak
 

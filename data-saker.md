@@ -1,4 +1,4 @@
-[Alle API'er](data-APIer.md) | [API for sesjoner](data-sesjoner.md)
+[Alle API'er](./data-APIer.md) | [API for sesjoner](./data-sesjoner.md)
 
 # Alle sakene for en sesjon
 

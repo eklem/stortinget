@@ -11,6 +11,10 @@ Start med å velge `stortings-sesjon` og indekser. Dette skal laste ned data fra
 
 Trenger en søkeinformasjons-modell som viser partier, representanter og saker og metadataene + APIene som er tenkt brukt og vist.
 
+## API-innhold
+
+[Oversikt over alle API'ene og eksempler på data returnert](./blob/trunk/data-APIer.md)
+
 ## Demo etterhvert
 
 Foreløpig bare en test av PWA (Progressive Web App) for å kunne bruke den som installerbar web-app på mobil og desktop. Og test av farger, fonter og annen CSS.
@@ -45,10 +49,6 @@ Kan også se hva som kan være nyttig og enkelt nok å lage fra det som [Holder 
 ~~For at JavaScript i nettleseren skal godta å hente data direkte fra data.stortinget.no trengs det en proxy-server. Satt opp en versjon av [cors-anywhere](https://github.com/Rob--W/cors-anywhere/) på [proxy.klemespen.com](https://proxy.klemespen.com/).~~
 
 ~~Det er en bug hos data.stortinget.no som vil bli fikset.~~ Bug er fikset. Du kan se data lastet ned direkte på [https://eklem.github.io/stortinget/html/](https://eklem.github.io/stortinget/).
-
-## API-innhold
-
-[Oversikt over alle API'ene og eksempler på data returnert](data-APIer.md)
 
 
 ## Dev setup
