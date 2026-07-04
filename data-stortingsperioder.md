@@ -6,7 +6,7 @@ Perioder stortingspolitikere er valgt for.
 
 Går fra 1. oktober kl. 00:00:00 ett år til 30. september kl. 23:59:00 4 år etter året.
 
-`url: [https://data.stortinget.no/eksport/stortingsperioder?format=json](https://data.stortinget.no/eksport/stortingsperioder?format=json)`
+**url:** [`https://data.stortinget.no/eksport/stortingsperioder?format=json`](https://data.stortinget.no/eksport/stortingsperioder?format=json)
 
 ```json
 {
