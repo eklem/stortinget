@@ -13,7 +13,7 @@ Trenger en søkeinformasjons-modell som viser partier, representanter og saker o
 
 ## API-innhold
 
-[Oversikt over alle API'ene og eksempler på data returnert](./blob/trunk/data-APIer.md)
+[Oversikt over alle API'ene og eksempler på data returnert](./data-APIer.md)
 
 ## Demo etterhvert
 
