@@ -6,7 +6,7 @@ En av fire arbeidsperioder for et valgt storting.
 
 Går fra 1. oktober kl. 00:00:00 ett år til 30. september kl. 23:59:00 det neste året.
 
-`url: https://data.stortinget.no/eksport/sesjoner?format=json`
+`url: [https://data.stortinget.no/eksport/sesjoner?format=json](https://data.stortinget.no/eksport/sesjoner?format=json)`
 
 ```json
 {
