@@ -1,4 +1,4 @@
-console.log('First try to regirster service worker.')
+console.log('First try to regirster service worker:')
 
 /* ### Service worker registration */
 if ("serviceWorker" in navigator) {
@@ -17,21 +17,24 @@ if ("serviceWorker" in navigator) {
 }
 
 /* ### BroadcastChannel connections */
-const broadcastMetaAppSw = new BroadcastChannel('meta_app_serviceworker')
-const broadcastMetaSwApp = new BroadcastChannel('meta_serviceworker_app')
-const broadcastQueryAppSw = new BroadcastChannel('query_app_serviceworker')
-const broadcastResultSwApp = new BroadcastChannel('result_serviceworke_app')
+const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
 console.log('Then hello app module!')
 
 /* ### Receiving messages */
-broadcastMetaSwApp.onmessage = (message) => {
+broadcastMeta.onmessage = (message) => {
   console.log('app.js receiving message:');
   console.log(message.data);
+}
+
+/* ### Messages error */
+broadcastMeta.onmessageerror = (error) => {
+  console.log('onMessageError: something happened:');
+  console.log(error);
 }
 
 const button = document.querySelector('button');
 button.addEventListener("click", (event) => {
   console.log('App.js trying to send message to service worker after click')
-  broadcastMetaAppSw.postMessage('Klikk fra app.js')
+  broadcastMeta.postMessage('Klikk fra app.js')
 })
