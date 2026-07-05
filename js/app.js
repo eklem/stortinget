@@ -32,5 +32,6 @@ broadcastMetaSwApp.onmessage = (message) => {
 
 const button = document.querySelector('button');
 button.addEventListener("click", (event) => {
+  console.log('App.js trying to send message to service worker after click')
   broadcastMetaAppSw.postMessage('Klikk fra app.js')
 })
