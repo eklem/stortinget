@@ -4,7 +4,7 @@ console.log('First try to regirster service worker:')
 if ("serviceWorker" in navigator) {
   // Register a service worker hosted at the root of the
   // site using the default scope.
-  navigator.serviceWorker.register("/stortinget/js/service-worker.js", { scope: "/stortinget/js" }).then(
+  navigator.serviceWorker.register("/stortinget/js/service-worker.js", { scope: "/stortinget/js/" }).then(
     (registration) => {
       console.log("Service worker registration succeeded:", registration);
     },
