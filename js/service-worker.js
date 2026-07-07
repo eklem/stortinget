@@ -32,6 +32,13 @@ broadcastMeta.onmessage = (message) => {
   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
 }
 
+window.onmessage = (message) => {
+  console.log('service-worker.js receiving message outside broadcast channel:');
+  console.log(message);
+  console.log('Henter sesjoner fra stortinget med getSessions()');
+  getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
+}
+
 /* ### Messages error */
 broadcastMeta.onmessageerror = (error) => {
   console.log('onMessageError: something happened:');
