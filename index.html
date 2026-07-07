@@ -13,23 +13,6 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
-    <script>
-      console.log('First try to regirster service worker:')
-      /* ### Service worker registration */
-      if ("serviceWorker" in navigator) {
-        // Register a service worker hosted at the root of the
-        navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'js/service-worker.js', { scope: window.location.origin + window.location.pathname + 'js/'}).then (
-          (registration) => {
-            console.log("Service worker registration succeeded:", registration);
-          },
-          (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-          },
-        );
-      } else {
-        console.error("Service workers are not supported.");
-      }
-    </script>
     <title>Stortinget søk</title>
   </head>
   <body>

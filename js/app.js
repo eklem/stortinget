@@ -1,3 +1,20 @@
+console.log('First try to regirster service worker:')
+
+/* ### Service worker registration */
+if ("serviceWorker" in navigator) {
+  // Register a service worker hosted at the root of the
+  navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'js/service-worker.js', { scope: window.location.origin + window.location.pathname + 'js/'}).then (
+    (registration) => {
+      console.log("Service worker registration succeeded:", registration);
+    },
+    (error) => {
+      console.error(`Service worker registration failed: ${error}`);
+    },
+  );
+} else {
+  console.error("Service workers are not supported.");
+}
+
 /* ### BroadcastChannel connections */
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
