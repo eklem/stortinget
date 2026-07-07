@@ -15,11 +15,10 @@
     </script>
     <script>
       console.log('First try to regirster service worker:')
-
       /* ### Service worker registration */
       if ("serviceWorker" in navigator) {
         // Register a service worker hosted at the root of the
-        navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'js/service-worker.js', { scope: window.location.origin + window.location.pathname + 'js/'}).then (
+        navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'service-worker.js', { scope: window.location.origin + window.location.pathname + 'js/'}).then (
           (registration) => {
             console.log("Service worker registration succeeded:", registration);
           },
@@ -88,7 +87,7 @@
       <p>some result</p>
       <p>some result</p>
     </div>
-    <script type="module" src="/stortinget/js/kelp.js"></script>
-    <script type="module" src="/stortinget/js/app.js"></script>
+    <script type="module" src="./kelp.js"></script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
