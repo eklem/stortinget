@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="/stortinget/manifest.webmanifest" crossorigin="use-credentials" />
-    <link rel="icon" href="/stortinget/img/icon-search-128.png" />
-    <link href="/stortinget/css/kelp.css" rel="stylesheet" >
-    <link href="/stortinget/css/style.css" rel="stylesheet" />
+    <link rel="manifest" href="./manifest.webmanifest" crossorigin="use-credentials" />
+    <link rel="icon" href="./img/icon-search-128.png" />
+    <link href="./css/kelp.css" rel="stylesheet" >
+    <link href="./css/style.css" rel="stylesheet" />
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-7aDfx2UrJAkPxlePlYVaW.js"></script>
     <script>
@@ -18,7 +18,7 @@
       /* ### Service worker registration */
       if ("serviceWorker" in navigator) {
         // Register a service worker hosted at the root of the
-        navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'service-worker.js', { scope: window.location.origin + window.location.pathname + 'js/'}).then (
+        navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'service-worker.js', { scope: window.location.origin + window.location.pathname}).then (
           (registration) => {
             console.log("Service worker registration succeeded:", registration);
           },

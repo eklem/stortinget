@@ -34,6 +34,17 @@ broadcastMeta.onmessage = (message) => {
 
 /* ### Messages error */
 broadcastMeta.onmessageerror = (error) => {
-  console.log('onMessageError: something happened:');
+  console.log('onMessageError: something happened?:');
   console.log(error);
 }
+
+/* ### skip waiting for next cycle to upgrade service worker */
+
+self.addEventListener("install", (event) => {
+  // The promise that skipWaiting() returns can be safely ignored.
+  self.skipWaiting()
+
+  // Perform any other actions required for your
+  // service worker to install, potentially inside
+  // of event.waitUntil()
+})
