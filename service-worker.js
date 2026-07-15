@@ -48,3 +48,4 @@ self.addEventListener("install", (event) => {
   // service worker to install, potentially inside
   // of event.waitUntil()
 })
+
