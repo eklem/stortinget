@@ -39,23 +39,15 @@ self.addEventListener('stateChange', (event) => {
 })
 
 /* ### Receiving messages */
-self.broadcastMeta.addEventListener('message', (event) => {
-  // console.log(message)
+broadcastMeta.addEventListener('message', (event) => {
   console.log(event)
   console.log('sw.js receiving message:')
   console.log('Henter sesjoner fra Stortinget med getSessions()')
   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
 })
 
-// self.broadcastMeta.onmessage = (event) => {
-//   console.log('sw.js receiving message:');
-//   console.log(event);
-//   console.log('Henter sesjoner fra Stortinget med getSessions()');
-//   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
-// }
-
 /* ### Messages error */
-// self.broadcastMeta.onmessageerror = (error) => {
-//   console.log('onMessageError: something happened?:');
+// broadcastMeta.addEventListener('messageerror', (error) => {
+//   console.log('onMessageError: something happened in sw.js?:');
 //   console.log(error);
-// }
+// })
