@@ -47,7 +47,7 @@ broadcastMeta.addEventListener('message', (event) => {
 })
 
 /* ### Messages error */
-// broadcastMeta.addEventListener('messageerror', (error) => {
-//   console.log('onMessageError: something happened in sw.js?:');
-//   console.log(error);
-// })
+broadcastMeta.addEventListener('messageerror', (error) => {
+  console.log('onMessageError: something happened in sw.js?:');
+  console.log(error);
+})
