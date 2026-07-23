@@ -25,7 +25,7 @@ const getSessions = function (url) {
 console.log('after')
 
 /* ### skip waiting for next cycle to upgrade service worker */
-self.addEventListener("install", (event) => {
+self.addEventListener('install', (event) => {
   // The promise that skipWaiting() returns can be safely ignored.
   self.skipWaiting()
 
@@ -35,22 +35,23 @@ self.addEventListener("install", (event) => {
 })
 
 /* ### Receiving messages */
-broadcastMeta.addEventListener('message', (event) => {
-  console.log('service-worker.js receiving message:')
-  console.log(message)
+<broadcastMeta.addEventListener('message', (event) => {
+  // console.log(message)
+  console.log(event)
+  console.log('sw.js receiving message:')
   console.log('Henter sesjoner fra Stortinget med getSessions()')
   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
 })
 
-// broadcastMeta.onmessage = (message) => {
-//   console.log('service-worker.js receiving message:');
-//   console.log(message);
+// self.broadcastMeta.onmessage = (event) => {
+//   console.log('sw.js receiving message:');
+//   console.log(event);
 //   console.log('Henter sesjoner fra Stortinget med getSessions()');
 //   getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
 // }
 
 /* ### Messages error */
-// broadcastMeta.onmessageerror = (error) => {
+// self.broadcastMeta.onmessageerror = (error) => {
 //   console.log('onMessageError: something happened?:');
 //   console.log(error);
 // }
