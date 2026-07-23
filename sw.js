@@ -39,7 +39,7 @@ self.addEventListener('stateChange', (event) => {
 })
 
 /* ### Receiving messages */
-<broadcastMeta.addEventListener('message', (event) => {
+self.broadcastMeta.addEventListener('message', (event) => {
   // console.log(message)
   console.log(event)
   console.log('sw.js receiving message:')
@@ -59,4 +59,3 @@ self.addEventListener('stateChange', (event) => {
 //   console.log('onMessageError: something happened?:');
 //   console.log(error);
 // }
-

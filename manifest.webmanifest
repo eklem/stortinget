@@ -2,6 +2,7 @@
   "short_name": "Stortinget søk",
   "name": "Stortinget søk",
   "description": "Søk på saker fra Stortinget",
+  "categories": ["education", "government", "news", "politics"],
   "icons": [
     {
       "src": "./img/icon-search-192.png",
