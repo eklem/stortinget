@@ -34,6 +34,10 @@ self.addEventListener('install', (event) => {
   // of event.waitUntil()
 })
 
+self.addEventListener('stateChange', (event) => {
+  console.log('State chage: ' + event)
+})
+
 /* ### Receiving messages */
 <broadcastMeta.addEventListener('message', (event) => {
   // console.log(message)
@@ -55,3 +59,4 @@ self.addEventListener('install', (event) => {
 //   console.log('onMessageError: something happened?:');
 //   console.log(error);
 // }
+
