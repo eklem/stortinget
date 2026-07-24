@@ -3,25 +3,6 @@ console.log('Service Worker: Hello world without an event listener!')
 /* ### BroadcastChannel connections */
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
-/* ### get Sessions, how to activate it can be figured out later. Check if new day or day past thisSession etc. */
-const getSessions = function (url) {
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error, status = ${response.status}`)
-      }
-      return response.json()
-    })
-    .then((data) => {
-      console.log('fetched data:')
-      console.log(JSON.stringify(data))
-      broadcastMeta.postMessage(JSON.stringify(data))
-    })
-    .catch((error) => {
-      console.dir(error)
-    })
-}
-
 console.log('after')
 
 /* ### skip waiting for next cycle to upgrade service worker */
@@ -32,6 +13,8 @@ self.addEventListener('install', (event) => {
   // Perform any other actions required for your
   // service worker to install, potentially inside
   // of event.waitUntil()
+
+  // Her kan jeg slå av "loading"-ikon på forsiden.
 })
 
 self.addEventListener('stateChange', (event) => {
@@ -41,9 +24,8 @@ self.addEventListener('stateChange', (event) => {
 /* ### Receiving messages */
 broadcastMeta.addEventListener('message', (event) => {
   console.log(event)
-  console.log('sw.js receiving message:')
-  console.log('Henter sesjoner fra Stortinget med getSessions()')
-  getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
+  console.log('sw.js receiving message:' + event.data)
+  broadcastMeta.postMessage('søketermer mottatt, og nå "returnert"')
 })
 
 /* ### Messages error */
@@ -51,3 +33,8 @@ broadcastMeta.addEventListener('messageerror', (error) => {
   console.log('onMessageError: something happened in sw.js?:');
   console.log(error);
 })
+
+/* ### Fetch listener */
+self.addEventListener('fetch', function (event) {
+  console.log('app.js gjør en fetch() mot api.stortinget.no')
+});

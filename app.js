@@ -17,7 +17,26 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
+/* ### get Sessions, how to activate it can be figured out later. Check if new day or day past thisSession etc. */
+const getSessions = function (url) {
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error, status = ${response.status}`)
+      }
+      return response.json()
+    })
+    .then((message) => {
+      console.log('fetched message:')
+      console.log(JSON.stringify(message))
+    })
+    .catch((error) => {
+      console.dir(error)
+    })
+}
+
 console.log('Then hello app module!')
+
 
 /* ### Receiving messages */
 broadcastMeta.onmessage = (message) => {
@@ -31,8 +50,20 @@ broadcastMeta.onmessageerror = (error) => {
   console.log(error);
 }
 
-const button = document.querySelector('button');
-button.addEventListener("click", (event) => {
+
+/* ### Fetch button action */
+const buttonFetch = document.querySelector('button#fetch');
+
+buttonFetch.addEventListener("click", (event) => {
+  console.log('Henter sesjoner fra Stortinget med getSessions()')
+  getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
+  // Når API-spørring er mottatt, så må noe info lagres i localstorage
+})
+
+/* ### Search button action */
+const buttonSearch = document.querySelector('button#searchButton');
+
+buttonSearch.addEventListener("click", (event) => {
   console.log('App.js trying to send message to service worker after click')
-  broadcastMeta.postMessage('Klikk fra app.js')
+  broadcastMeta.postMessage('Søketerm sendes fra app.js')
 })
