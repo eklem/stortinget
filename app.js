@@ -61,9 +61,10 @@ buttonFetch.addEventListener("click", (event) => {
 })
 
 /* ### Search button action */
-const buttonSearch = document.querySelector('button#searchButton');
+const searchField = document.getElementById('search')
 
-buttonSearch.addEventListener("click", (event) => {
-  console.log('App.js trying to send message to service worker after click')
-  broadcastMeta.postMessage('Søketerm sendes fra app.js')
+searchField.addEventListener('keyup', (event) => {
+  const query = document.getElementById('search').value
+  console.log('App.js trying to send message to service worker after text input: ' + query)
+  broadcastMeta.postMessage('Søketerm sendes fra app.js: ' + query)
 })
