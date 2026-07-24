@@ -36,5 +36,31 @@ broadcastMeta.addEventListener('messageerror', (error) => {
 
 /* ### Fetch listener */
 self.addEventListener('fetch', function (event) {
-  console.log('app.js gjør en fetch() mot api.stortinget.no')
-});
+  let request = event.request
+
+  // Network first for local files
+  if (request.headers.get('Accept').includes('image') || request.headers.get('Accept').includes('text/html') || request.headers.get('Accept').includes('text/css') || request.headers.get('Accept').includes('font/woff2')) {
+    console.log('hello image cached')
+    event.respondWith(
+      fetch(request).then(function (response) {
+        return response;
+      }).catch(function (error) {
+        return caches.match(request).then(function (response) {
+          return response;
+        })
+      })
+    )
+  }
+
+  // Offline-first - only JSON from api.stortinget.no
+  // if (request.headers.get('Accept').includes('application/json') && request.url.includes('api.stortinget.no')) {
+  if (request.headers.get('Accept').includes('application/json')) {
+    event.respondWith(
+      caches.match(request).then(function (response) {
+        return response || fetch(request).then(function (response) {
+          return response
+        })
+      })
+    )
+  }
+})
