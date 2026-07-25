@@ -60,6 +60,14 @@ buttonFetch.addEventListener("click", (event) => {
   // Når API-spørring er mottatt, så må noe info lagres i localstorage
 })
 
+/* ### SearchFetch button action */
+const buttonSearchFetch = document.querySelector('button#searchFetch');
+
+buttonSearchFetch.addEventListener("click", (event) => {
+  console.log('Fetch av parameter på egen URL')
+  fetch(window.location.origin + window.location.pathname + '?query=test')
+})
+
 /* ### Search button action */
 const searchField = document.getElementById('search')
 
