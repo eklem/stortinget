@@ -65,7 +65,7 @@ const buttonSearchFetch = document.querySelector('button#searchFetch');
 
 buttonSearchFetch.addEventListener("click", (event) => {
   console.log('Fetch av parameter på egen URL')
-  fetch(window.location.origin + window.location.pathname + '?query=test')
+  fetch(window.location.origin + window.location.pathname + `?{'query': 'test'}`)
 })
 
 /* ### Search button action */

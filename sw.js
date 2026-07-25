@@ -17,6 +17,11 @@ self.addEventListener('install', (event) => {
   // Her kan jeg slå av "loading"-ikon på forsiden.
 })
 
+/* ### Make sure the clients use this service worker */
+self.addEventListener("activate", (event) => {
+  event.waitUntil(clients.claim());
+});
+
 self.addEventListener('stateChange', (event) => {
   console.log('State chage: ' + event)
 })
@@ -37,8 +42,8 @@ broadcastMeta.addEventListener('messageerror', (error) => {
 /* ### Fetch listener */
 self.addEventListener('fetch', function (event) {
   let request = event.request
-  console.log('fetch eventlistener: ')
-  console.dir(request)
+  console.log('### sw.js: fetch eventlistener: ' + request.url)
+  broadcastMeta.postMessage('### sw -> app: fetch eventlistener: ' + request.url)
   
   // // Network first for local files
   // if (request.headers.get('Accept').includes('image') || request.headers.get('Accept').includes('text/html') || request.headers.get('Accept').includes('text/css') || request.headers.get('Accept').includes('font/woff2')) {
