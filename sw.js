@@ -35,8 +35,9 @@ broadcastMeta.addEventListener('messageerror', (error) => {
 })
 
 /* ### ########################################################### ### */
-/* ### URL regexes                                                 ### */
-const switchRegex = /(?<=\/#)\w*(?=={)/
+/* ### URL regexes for control switch                              ### */
+const commandTest = /(\/\?)/
+const switchRegex = /(?<=\/?)\w*(?=={)/
 const objectRegex = /{.*}$/
 
 /* ### ########################################################### ### */
@@ -45,41 +46,28 @@ const objectRegex = /{.*}$/
 self.addEventListener('fetch', function (event) {
   const request = event.request
   const url = decodeURI(request.url)
-  console.log('url: ' + url)
-  let command = switchRegex.exec(url)
-  command = command[0]
-  console.log('command: ' + command)
-  let urlJson = (objectRegex.exec(url))
-  urlJson = urlJson[0]
-  console.log(urlJson)
-  urlJson = JSON.parse(urlJson)
-  
-  console.log('### sw.js: fetch eventlistener: ' + url)
-  switch (command) {
-    case 'apiFetch':
-      console.log('Hent JSON fra api.stortinget.no')
-      broadcastMeta.postMessage('### sw -> app: apiFetch: ' + urlJson)
-      break
-    case 'query':
-      console.log('Gjør et søk på: ' + urlJson.query)
-      broadcastMeta.postMessage('### sw -> app: query: ' + urlJson.query)
-      break
-    default:
-      console.log('Andre filer');
+  if (commandTest.test(url)) {
+    console.log('url: ' + url)
+    let command = switchRegex.exec(url)
+    command = command[0]
+    console.log('command: ' + command)
+    let urlJson = (objectRegex.exec(url))
+    urlJson = urlJson[0]
+    console.log(urlJson)
+    urlJson = JSON.parse(urlJson)
+    
+    console.log('### sw.js: fetch eventlistener: ' + url)
+    switch (command) {
+      case 'apiFetch':
+        console.log('Hent JSON fra api.stortinget.no')
+        broadcastMeta.postMessage('### sw -> app: apiFetch: ' + urlJson)
+        break
+      case 'query':
+        console.log('Gjør et søk på: ' + urlJson.query)
+        broadcastMeta.postMessage('### sw -> app: query: ' + urlJson.query)
+        break
+      default:
+        console.log('Andre filer');
+    }
   }
-  // // Network first for local files
-  // if (request.headers.get('Accept').includes('image') || request.headers.get('Accept').includes('text/html') || request.headers.get('Accept').includes('text/css') || request.headers.get('Accept').includes('font/woff2')) {
-  //   console.log('hello file cached')
-  //   event.respondWith(
-  //     fetch(request).then(function (response) {
-  //       return response;
-  //     }).catch(function (error) {
-  //       return caches.match(request).then(function (response) {
-  //         return response;
-  //       })
-  //     })
-  //   )
-  // }
 })
-
-
