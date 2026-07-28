@@ -3,7 +3,6 @@ console.log('Service Worker: Hello world without an event listener!')
 /* ### BroadcastChannel connections */
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
-console.log('after')
 
 /* ### skip waiting for next cycle to upgrade service worker */
 self.addEventListener('install', (event) => {
@@ -22,16 +21,12 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
 });
 
-self.addEventListener('stateChange', (event) => {
-  console.log('State chage: ' + event)
-})
-
-/* ### Receiving messages */
-broadcastMeta.addEventListener('message', (event) => {
-  console.log(event)
-  console.log('sw.js receiving message:' + event.data)
-  broadcastMeta.postMessage('søketermer mottatt, og nå "returnert"')
-})
+// /* ### Receiving messages */
+// broadcastMeta.addEventListener('message', (event) => {
+//   console.log(event)
+//   console.log('sw.js receiving message:' + event.data)
+//   broadcastMeta.postMessage('søketermer mottatt, og nå "returnert"')
+// })
 
 /* ### Messages error */
 broadcastMeta.addEventListener('messageerror', (error) => {
@@ -39,12 +34,39 @@ broadcastMeta.addEventListener('messageerror', (error) => {
   console.log(error);
 })
 
-/* ### Fetch listener */
+/* ### ########################################################### ### */
+/* ### URL regexes                                                 ### */
+const switchRegex = /(?<=\/#)\w*(?=={)/
+const objectRegex = /{.*}$/
+
+/* ### ########################################################### ### */
+/* ### Fetch listener + control switch                             ### */
+
 self.addEventListener('fetch', function (event) {
-  let request = event.request
-  console.log('### sw.js: fetch eventlistener: ' + request.url)
-  broadcastMeta.postMessage('### sw -> app: fetch eventlistener: ' + request.url)
+  const request = event.request
+  const url = decodeURI(request.url)
+  console.log('url: ' + url)
+  let command = switchRegex.exec(url)
+  command = command[0]
+  console.log('command: ' + command)
+  let urlJson = (objectRegex.exec(url))
+  urlJson = urlJson[0]
+  console.log(urlJson)
+  urlJson = JSON.parse(urlJson)
   
+  console.log('### sw.js: fetch eventlistener: ' + url)
+  switch (command) {
+    case 'apiFetch':
+      console.log('Hent JSON fra api.stortinget.no')
+      broadcastMeta.postMessage('### sw -> app: apiFetch: ' + urlJson)
+      break
+    case 'query':
+      console.log('Gjør et søk på: ' + urlJson.query)
+      broadcastMeta.postMessage('### sw -> app: query: ' + urlJson.query)
+      break
+    default:
+      console.log('Andre filer');
+  }
   // // Network first for local files
   // if (request.headers.get('Accept').includes('image') || request.headers.get('Accept').includes('text/html') || request.headers.get('Accept').includes('text/css') || request.headers.get('Accept').includes('font/woff2')) {
   //   console.log('hello file cached')
@@ -59,3 +81,5 @@ self.addEventListener('fetch', function (event) {
   //   )
   // }
 })
+
+

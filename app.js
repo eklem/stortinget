@@ -65,7 +65,7 @@ const buttonSearchFetch = document.querySelector('button#searchFetch');
 
 buttonSearchFetch.addEventListener("click", (event) => {
   console.log('Fetch av parameter på egen URL')
-  fetch(window.location.origin + window.location.pathname + `?{'query': 'test'}`)
+  fetch(window.location.origin + window.location.pathname + `#query={'query': 'test'}`)
 })
 
 /* ### Search button action */
@@ -73,6 +73,7 @@ const searchField = document.getElementById('search')
 
 searchField.addEventListener('keyup', (event) => {
   const query = document.getElementById('search').value
+  console.log('query: "' + query + '"')
   console.log('App.js trying to send message to service worker after text input: ' + query)
-  broadcastMeta.postMessage('Søketerm sendes fra app.js: ' + query)
+  fetch(window.location.origin + window.location.pathname + '#query={"query": "' + query + '"}')
 })
