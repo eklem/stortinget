@@ -1,8 +1,11 @@
-/* ### BroadcastChannel connections */
+/* ### ########################################################### ### */
+/* ### BroadcastChannel init.                                      ### */
+
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
-console.log('First try to regirster service worker:')
-/* ### Service worker registration */
+/* ### ########################################################### ### */
+/* ### Service worker registration                                 ### */
+
 if ("serviceWorker" in navigator) {
   // Register a service worker hosted at the root of the
   navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'sw.js', { scope: window.location.origin + window.location.pathname}).then (
@@ -17,34 +20,15 @@ if ("serviceWorker" in navigator) {
   console.error("Service workers are not supported.");
 }
 
-/* ### get Sessions, how to activate it can be figured out later. Check if new day or day past thisSession etc. */
-const getSessions = function (url) {
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error, status = ${response.status}`)
-      }
-      return response.json()
-    })
-    .then((message) => {
-      console.log('fetched message:')
-      console.log(JSON.stringify(message))
-    })
-    .catch((error) => {
-      console.dir(error)
-    })
-}
 
-console.log('Then hello app module!')
+/* ### ########################################################### ### */
+/* ### Mottak av meldinger fra app.js                              ### */
 
-
-/* ### Receiving messages */
 broadcastMeta.onmessage = (message) => {
   console.log('app.js receiving message:');
   console.log(message.data);
 }
 
-/* ### Messages error */
 broadcastMeta.onmessageerror = (error) => {
   console.log('onMessageError: something happened:');
   console.log(error);
@@ -55,17 +39,9 @@ broadcastMeta.onmessageerror = (error) => {
 const buttonFetch = document.querySelector('button#fetch');
 
 buttonFetch.addEventListener("click", (event) => {
-  console.log('Henter sesjoner fra Stortinget med getSessions()')
-  getSessions('https://data.stortinget.no/eksport/sesjoner?format=json')
+  console.log('Sender fetch-spørring til sw.js med fetch()')
+  fetch(window.location.origin + window.location.pathname + '?apiFetch={"url": "https://data.stortinget.no/eksport/sesjoner?format=json"}')
   // Når API-spørring er mottatt, så må noe info lagres i localstorage
-})
-
-/* ### SearchFetch button action */
-const buttonSearchFetch = document.querySelector('button#searchFetch');
-
-buttonSearchFetch.addEventListener("click", (event) => {
-  console.log('Fetch av parameter på egen URL')
-  fetch(window.location.origin + window.location.pathname + `#query={'query': 'test'}`)
 })
 
 /* ### Search button action */

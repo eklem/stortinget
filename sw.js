@@ -1,6 +1,5 @@
-console.log('Service Worker: Hello world without an event listener!')
-
-/* ### BroadcastChannel connections */
+/* ### ########################################################### ### */
+/* ### BroadcastChannel init.                                      ### */
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
 
@@ -34,9 +33,32 @@ broadcastMeta.addEventListener('messageerror', (error) => {
   console.log(error);
 })
 
+/* ###  */
+/* ### flytt til service worker ### */
+
+/* ### ########################################################### ### */
+/* ### get Sessions, how to activate it can be figured out later.  ### */
+/* ### Check if new day or day past thisSession etc.               ### */
+const getSessions = function (url) {
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error, status = ${response.status}`)
+      }
+      return response.json()
+    })
+    .then((message) => {
+      console.log('fetched message:')
+      console.log(JSON.stringify(message))
+    })
+    .catch((error) => {
+      console.dir(error)
+    })
+}
+
 /* ### ########################################################### ### */
 /* ### URL regexes for control switch                              ### */
-const commandTest = /(\/\?)/
+const commandUrl = /(\/\?)/
 const switchRegex = /(?<=\/?)\w*(?=={)/
 const objectRegex = /{.*}$/
 
@@ -46,12 +68,12 @@ const objectRegex = /{.*}$/
 self.addEventListener('fetch', function (event) {
   const request = event.request
   const url = decodeURI(request.url)
-  if (commandTest.test(url)) {
+  if (commandUrl.test(url)) {
     console.log('url: ' + url)
     let command = switchRegex.exec(url)
     command = command[0]
     console.log('command: ' + command)
-    let urlJson = (objectRegex.exec(url))
+    let urlJson = objectRegex.exec(url)
     urlJson = urlJson[0]
     console.log(urlJson)
     urlJson = JSON.parse(urlJson)
@@ -60,6 +82,7 @@ self.addEventListener('fetch', function (event) {
     switch (command) {
       case 'apiFetch':
         console.log('Hent JSON fra api.stortinget.no')
+        getSessions(urlJson.url)
         broadcastMeta.postMessage('### sw -> app: apiFetch: ' + urlJson)
         break
       case 'query':
