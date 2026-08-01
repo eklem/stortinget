@@ -1,4 +1,9 @@
 /* ### ########################################################### ### */
+/* ### importing modules                                           ### */
+
+import { set, get, update, createStore } from './idb-keywal.js'
+
+/* ### ########################################################### ### */
 /* ### BroadcastChannel init.                                      ### */
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
@@ -14,6 +19,12 @@ self.addEventListener('install', (event) => {
 
   // Her kan jeg slå av "loading"-ikon på forsiden.
 })
+
+/* ### ########################################################### ### */
+/* ### database-stuff                                              ### */
+
+const curerntTable = createStore('db-current', 'store-current');
+console.
 
 /* ### Make sure the clients use this service worker */
 self.addEventListener("activate", (event) => {
@@ -62,6 +73,19 @@ const commandUrl = /(\/\?)/
 const switchRegex = /(?<=\/?)\w*(?=={)/
 const objectRegex = /{.*}$/
 
+const getCommand = function (url) {
+  let command = switchRegex.exec(url)
+  command = command[0]
+  return command
+}
+
+const getUrlJSON = function (url) {
+  let urlJson = objectRegex.exec(url)
+  urlJson = urlJson[0]
+  urlJson = JSON.parse(urlJson)
+  return urlJson
+}
+
 /* ### ########################################################### ### */
 /* ### Fetch listener + control switch                             ### */
 
@@ -69,15 +93,8 @@ self.addEventListener('fetch', function (event) {
   const request = event.request
   const url = decodeURI(request.url)
   if (commandUrl.test(url)) {
-    console.log('url: ' + url)
-    let command = switchRegex.exec(url)
-    command = command[0]
-    console.log('command: ' + command)
-    let urlJson = objectRegex.exec(url)
-    urlJson = urlJson[0]
-    console.log(urlJson)
-    urlJson = JSON.parse(urlJson)
-    
+    let command = getCommand(url)
+    let urlJson = getUrlJSON(url)
     console.log('### sw.js: fetch eventlistener: ' + url)
     switch (command) {
       case 'apiFetch':

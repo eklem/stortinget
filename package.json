@@ -2,7 +2,15 @@
   "name": "stortinget",
   "version": "0.0.1",
   "dependencies": {
-    "kelpui": "^1.17.2"
+    "arrow-js": "0.1.9",
+    "eklem-headline-parser": "4.0.3",
+    "hit-highlighter": "4.0.1",
+    "idb-keyval": "6.3.0",
+    "kelpui": "1.17.2",
+    "ngraminator": "3.0.2",
+    "search-index": "6.0.1",
+    "stopword": "3.1.5",
+    "words-n-numbers": "9.1.2"
   },
   "description": "Forsøk på å lage et brukbart søk for saker, politikere og avstemninger på Stortinget. ",
   "files": [
@@ -10,7 +18,7 @@
     "./rollup.config.js"
   ],
   "scripts": {
-    "build": "cp ./node_modules/kelpui/css/kelp.css ./css && cp ./node_modules/kelpui/js/kelp.js ./js",
+    "build": "cp ./node_modules/kelpui/css/kelp.css ./css && cp ./node_modules/kelpui/js/kelp.js ./ && cp ./node_modules/idb-keyval/dist/index.js ./idb-keyval.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

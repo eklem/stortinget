@@ -8,7 +8,11 @@ const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
 if ("serviceWorker" in navigator) {
   // Register a service worker hosted at the root of the
-  navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'sw.js', { scope: window.location.origin + window.location.pathname}).then (
+  navigator.serviceWorker.register(window.location.origin + window.location.pathname + 'sw.js', { 
+    type: 'module',
+    scope: window.location.origin + window.location.pathname
+  })
+  .then (
     (registration) => {
       console.log("Service worker registration succeeded:", registration);
     },
