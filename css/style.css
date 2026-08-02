@@ -73,7 +73,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 7px;
 }
 p:last-of-type {
   margin-bottom: 0px;
@@ -91,6 +91,18 @@ p:last-of-type {
 
 }
 
+.sesjon {
+  margin-bottom:15px;
+}
+
+.sesjon > p.meta {
+  color:#555555;
+}
+
+#sesjoner-leggtil > .seksjon {
+  margin: 20px 0 0 0;
+}
+
 #om > h2 {
   background-image: url("../img/icon-info-32-32.svg");
   background-size: 32px 32px;
@@ -99,8 +111,6 @@ p:last-of-type {
   min-height: 32px;
 }
 
-
-
 body {
   color:#000000;
   background:#f5f3f1;
@@ -108,7 +118,7 @@ body {
   font-family: "firava", sans-serif;
   font-size:large;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
 }
 search {
@@ -116,6 +126,33 @@ search {
   top: 0px;
   padding:20px 20px 20px 20px;
   background: #ffffff;
+}
+
+#body {
+  padding:20px 20px 20px 20px;
+}
+
+#search {
+  border-bottom: 1px solid #702146;
+  border-radius: 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  padding:8px;
+  background-image: url("../img/icon-soek-32-32.svg");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: right 8px top 6px;
+  font-weight:300;
+}
+
+
+/* Fix this later so that background-image is set to none only when query.length > 0 */
+#search:focus {
+  outline: none;
+  color:#000000;
+  background-color: #f5f3f1;
+  background-image: none;
 }
 
 button {
@@ -131,19 +168,47 @@ button {
 button:active {
   background: #ece8e5;
   border: 1px solid #d8d1ca;
-
 }
 
-button.dropdown {
+button.dropdown, button.secondary {
   font-size: x-large;
   font-weight: 100;
   border: none;
   padding:10px 10px 10px 10px; 
   min-height:52px;
+  width:100%;
+  max-width:500px;
+  display:block;
+  text-align:left;
 }
 
 button.dropdown > img {
   margin-left: 20px;
+  float: right;
+}
+
+button.secondary {
+  background-color: #f5f3f1;
+  margin-bottom: 10px;
+}
+
+button.secondary.on {
+  background-color: #ece8e5;
+  margin-bottom: 10px;
+  padding-left:44px;
+  background-image: url("../img/icon-ferdig-24-24.svg");
+  background-size: 24px 24px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  alignment-baseline: middle;
+}
+
+button.secondary:last-of-type {
+  margin-bottom: 0;
+}
+
+button.secondary:active {
+  background: #ece8e5;
 }
 
 #sesjoner-leggtil > button.dropdown {
@@ -152,7 +217,7 @@ button.dropdown > img {
   background-size: 32px 32px;
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  alignment-baseline: mi;ddle;
+  alignment-baseline: middle;
 }
 
 #slett > button.dropdown {
@@ -162,31 +227,4 @@ button.dropdown > img {
   background-position: 10px 10px;
   background-repeat: no-repeat;
   alignment-baseline: middle;
-}
-
-#body {
-  padding:20px 20px 20px 20px;
-}
-
-#search {
-  border-bottom: 1px solid #702146;
-  border-radius: 0;
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  padding:8px;
-  background-image: url("../img/icon-search.png");
-  background-size: 32px 32px;
-  background-repeat: no-repeat;
-  background-position: right 8px top 6px;
-  font-weight:300;
-}
-
-
-/* Fix this later so that background-image is set to none only when query.length > 0 */
-#search:focus {
-  outline: none;
-  color:#000000;
-  background-color: #f5f3f1;
-  background-image: none;
 }
