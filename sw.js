@@ -1,7 +1,7 @@
 /* ### ########################################################### ### */
 /* ### importing modules                                           ### */
 
-import { set, get, update, createStore } from './idb-keywal.js'
+import { del, set, get, update, entries, createStore } from './idb-keyval.js'
 
 /* ### ########################################################### ### */
 /* ### BroadcastChannel init.                                      ### */
@@ -23,8 +23,12 @@ self.addEventListener('install', (event) => {
 /* ### ########################################################### ### */
 /* ### database-stuff                                              ### */
 
-const curerntTable = createStore('db-current', 'store-current');
-console.
+const currentTable = createStore('db-current', 'store-current')
+const stortingetJson = createStore('db-stortinget-json', 'store-stortinget-json')
+
+update('hello', (val) => val  = 'world5', stortingetJson);
+// entries(stortingetJson).then((entries) => console.dir(entries))
+
 
 /* ### Make sure the clients use this service worker */
 self.addEventListener("activate", (event) => {

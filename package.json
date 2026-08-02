@@ -2,7 +2,7 @@
   "name": "stortinget",
   "version": "0.0.1",
   "dependencies": {
-    "arrow-js": "0.1.9",
+    "@arrow-js/core": "1.0.6",
     "eklem-headline-parser": "4.0.3",
     "hit-highlighter": "4.0.1",
     "idb-keyval": "6.3.0",

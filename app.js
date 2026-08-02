@@ -1,4 +1,9 @@
 /* ### ########################################################### ### */
+/* ### Modules                                                     ### */
+
+import { html, reactive } from 'https://esm.sh/@arrow-js/core'
+
+/* ### ########################################################### ### */
 /* ### BroadcastChannel init.                                      ### */
 
 const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
@@ -14,14 +19,14 @@ if ("serviceWorker" in navigator) {
   })
   .then (
     (registration) => {
-      console.log("Service worker registration succeeded:", registration);
+      console.log("Service worker registration succeeded:", registration)
     },
     (error) => {
       console.error(`Service worker registration failed: ${error}`)
     },
-  );
+  )
 } else {
-  console.error("Service workers are not supported.");
+  console.error("Service workers are not supported.")
 }
 
 
@@ -29,24 +34,24 @@ if ("serviceWorker" in navigator) {
 /* ### Mottak av meldinger fra app.js                              ### */
 
 broadcastMeta.onmessage = (message) => {
-  console.log('app.js receiving message:');
-  console.log(message.data);
+  console.log('app.js receiving message:')
+  console.log(message.data)
 }
 
 broadcastMeta.onmessageerror = (error) => {
-  console.log('onMessageError: something happened:');
-  console.log(error);
+  console.log('onMessageError: something happened:')
+  console.log(error)
 }
 
 
 /* ### Fetch button action */
-const buttonFetch = document.querySelector('button#fetch');
+// const buttonFetch = document.querySelector('button#fetch')
 
-buttonFetch.addEventListener("click", (event) => {
-  console.log('Sender fetch-spørring til sw.js med fetch()')
-  fetch(window.location.origin + window.location.pathname + '?apiFetch={"url": "https://data.stortinget.no/eksport/sesjoner?format=json"}')
-  // Når API-spørring er mottatt, så må noe info lagres i localstorage
-})
+// buttonFetch.addEventListener("click", (event) => {
+//   console.log('Sender fetch-spørring til sw.js med fetch()')
+//   fetch(window.location.origin + window.location.pathname + '?apiFetch={"url": "https://data.stortinget.no/eksport/sesjoner?format=json"}')
+//   // Når API-spørring er mottatt, så må noe info lagres i localstorage
+// })
 
 /* ### Search button action */
 const searchField = document.getElementById('search')

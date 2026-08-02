@@ -58,21 +58,57 @@ h1 {
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
-  background-image: url("../img/icon-search-logo.png");
+  background-image: url("../img/icon-logo-48-48.svg");
   background-size: 48px 48px;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
 }
 
+h2 {
+  font-size: x-large;
+  font-weight: 100;
+  margin:0 0 20px 0;
+  padding: 2px 0px 0px 47px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+p:last-of-type {
+  margin-bottom: 0px;
+}
+
+.seksjon {
+  margin-bottom: 40px;
+}
+
+#sesjoner > h2 {
+  background-image: url("../img/icon-sesjon-32-32.svg");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  alignment-baseline: middle;
+
+}
+
+#om > h2 {
+  background-image: url("../img/icon-info-32-32.svg");
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  padding-left: 47px;
+  min-height: 32px;
+}
+
+
+
 body {
   color:#000000;
-  background:#ffffff;
+  background:#f5f3f1;
   margin:0;
   font-family: "firava", sans-serif;
   font-size:large;
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
 }
 search {
@@ -96,6 +132,36 @@ button:active {
   background: #ece8e5;
   border: 1px solid #d8d1ca;
 
+}
+
+button.dropdown {
+  font-size: x-large;
+  font-weight: 100;
+  border: none;
+  padding:10px 10px 10px 10px; 
+  min-height:52px;
+}
+
+button.dropdown > img {
+  margin-left: 20px;
+}
+
+#sesjoner-leggtil > button.dropdown {
+  padding-left:52px;
+  background-image: url("../img/icon-sesjon-legg-til-32-32.svg");
+  background-size: 32px 32px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  alignment-baseline: mi;ddle;
+}
+
+#slett > button.dropdown {
+  padding-left:52px;
+  background-image: url("../img/icon-soeppelkasse-32-32.svg");
+  background-size: 32px 32px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  alignment-baseline: middle;
 }
 
 #body {

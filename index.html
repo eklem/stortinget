@@ -23,52 +23,23 @@
       <input type="search" id="search" name="qeury" placeholder="Hva leter du etter?" />
     </search>
     <div id="body">
-      <button id="fetch">hent data</button>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>more results ftw!</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some resssult</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
-      <p>some result</p>
+      <div id="sesjoner" class="seksjon">
+        <h2>Søkbare sesjoner</h2>
+        <p>[Ingen søkbare sesjoner]</p>
+      </div>
+      <div id="sesjoner-leggtil" class="seksjon">
+        <button class="dropdown" id="add-session">Legg til sesjon<img src="../img/icon-down-up-32-32.svg"></button>
+      </div>
+      <div id="om" class="seksjon">
+        <h2>Om søkemotoren</h2>
+        <p>Denne søkemotoren lever i nettleseren din. Det er ingen server, bortsett fra noen statiske filer. Du må velge hvilken sesjon som skal være søkbar, og når du har gjort det tar det litt tid før dataene er lastet ned til nettleseren din og er gjort søkbare.</p>
+        <p>Kildekoden til søkemotoren er åpen kildekode (MIT License). Du kan være med å bidra, eller lage din egen variant hvis du vil. Dataene hentes fra data.stortinget.no og er under <a href="https://data.norge.no/nlod/no">Norsk lisens for offentlige data (NLOD)</a>.</p>
+      </div>
+      <div id="slett" class="seksjon">
+        <button class="dropdown" id="slettdata">Slett data<img src="../img/icon-down-up-32-32.svg"></button>
+      </div>
+
+      <!-- <button id="fetch">hent data</button> -->
     </div>
     <script type="module" src="./kelp.js"></script>
     <script type="module" src="./app.js"></script>
