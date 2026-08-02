@@ -5,12 +5,12 @@
   "categories": ["education", "government", "news", "politics"],
   "icons": [
     {
-      "src": "./img/icon-logo-48-48.svg",
+      "src": "./img/icon-search-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./img/icon-logo-48-48.svg",
+      "src": "./img/icon-search-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
