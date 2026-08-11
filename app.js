@@ -60,5 +60,5 @@ searchField.addEventListener('keyup', (event) => {
   const query = document.getElementById('search').value
   console.log('query: "' + query + '"')
   console.log('App.js trying to send message to service worker after text input: ' + query)
-  fetch(window.location.origin + window.location.pathname + '?query={"query": "' + query + '"}')
+  fetch(window.location.origin + window.location.pathname + 'API?query={"query": "' + query + '"}')
 })

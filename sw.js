@@ -9,9 +9,23 @@ const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
 
 /* ### skip waiting for next cycle to upgrade service worker */
+let coreAssets = [
+	'./API'
+]
+
 self.addEventListener('install', (event) => {
   // The promise that skipWaiting() returns can be safely ignored.
   self.skipWaiting()
+
+  // Cache core assets
+	event.waitUntil(caches.open('app').then(function (cache) {
+		for (let asset of coreAssets) {
+			cache.add(new Request(asset))
+      console.log('let asset...')
+		}
+    console.log('return cache: ' + cache)
+		return cache;
+	}))
 
   // Perform any other actions required for your
   // service worker to install, potentially inside
@@ -73,9 +87,10 @@ const getSessions = function (url) {
 
 /* ### ########################################################### ### */
 /* ### URL regexes for control switch                              ### */
-const commandUrl = /(\/\?)/
-const switchRegex = /(?<=\/?)\w*(?=={)/
+// const commandUrl = /(\/API\?)/
+const switchRegex = /(?<=\/API\?)\w*(?=={)/
 const objectRegex = /{.*}$/
+const cacheUrlRegex = /.*(?=\?)/
 
 const getCommand = function (url) {
   let command = switchRegex.exec(url)
@@ -90,28 +105,69 @@ const getUrlJSON = function (url) {
   return urlJson
 }
 
+const getCacheUrl = function (url) {
+  const cacheUrl = cacheUrlRegex.exec(url)
+  console.log('### ######### cache url: ' + cacheUrl)
+  return cacheUrl
+}
+
 /* ### ########################################################### ### */
 /* ### Fetch listener + control switch                             ### */
 
 self.addEventListener('fetch', function (event) {
+  console.dir(event.request)
   const request = event.request
   const url = decodeURI(request.url)
-  if (commandUrl.test(url)) {
+  if (url.includes('API')) {
     let command = getCommand(url)
     let urlJson = getUrlJSON(url)
+    let apiUrl = getCacheUrl(url)
+    console.log('### Command: ' + command)
+    console.log('### UrlJson: ' + JSON.stringify(urlJson))
+    console.log('###  apiUrl: ' + apiUrl)
     console.log('### sw.js: fetch eventlistener: ' + url)
     switch (command) {
       case 'apiFetch':
-        console.log('Hent JSON fra api.stortinget.no')
         getSessions(urlJson.url)
         broadcastMeta.postMessage('### sw -> app: apiFetch: ' + urlJson)
         break
       case 'query':
-        console.log('Gjør et søk på: ' + urlJson.query)
         broadcastMeta.postMessage('### sw -> app: query: ' + urlJson.query)
         break
       default:
-        console.log('Andre filer');
+        console.log('Andre kommandoer');
     }
+
+    // cache API and not the rest
+    let requestEdit = new Request(request, {
+      ...request,
+      url: apiUrl
+    })
+    console.log('### ######### 0 requestEdit')
+    console.dir(requestEdit)
+    event.respondWith(
+      caches.match(requestEdit).then(function (response) {
+        let responseEdit = new Response(response, {
+          url: apiUrl,
+          ...response
+        })
+        console.log('### ######### 1 responseEdit')
+        console.dir(responseEdit)
+
+        return responseEdit || fetch(requestEdit).then(function (response) {
+          console.log('### ######### 2 response')
+          console.dir(response)
+          console.log('### ########## response url: ' + response.url)
+          // Create a copy of the response and save it to the cache
+          let copy = response.clone();
+          event.waitUntil(caches.open('apis').then(function (cache) {
+            return cache.put(requestEdit, copy);
+          }));
+
+          // Return the response
+          return response;
+        })
+      })
+    )
   }
 })
