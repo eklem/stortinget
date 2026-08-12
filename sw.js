@@ -138,36 +138,16 @@ self.addEventListener('fetch', function (event) {
         console.log('Andre kommandoer');
     }
 
-    // cache API and not the rest
-    let requestEdit = new Request(request, {
-      ...request,
-      url: apiUrl
-    })
-    console.log('### ######### 0 requestEdit')
-    console.dir(requestEdit)
+    // ### Fake response since the request is the point
     event.respondWith(
-      caches.match(requestEdit).then(function (response) {
-        let responseEdit = new Response(response, {
-          url: apiUrl,
-          ...response
-        })
-        console.log('### ######### 1 responseEdit')
-        console.dir(responseEdit)
-
-        return responseEdit || fetch(requestEdit).then(function (response) {
-          console.log('### ######### 2 response')
-          console.dir(response)
-          console.log('### ########## response url: ' + response.url)
-          // Create a copy of the response and save it to the cache
-          let copy = response.clone();
-          event.waitUntil(caches.open('apis').then(function (cache) {
-            return cache.put(requestEdit, copy);
-          }));
-
-          // Return the response
-          return response;
-        })
-      })
+      (async () => {
+        // Try to get the response from a cache.
+        const cachedResponse = await caches.match(event.request);
+        // Return it if we found one.
+        if (cachedResponse) return cachedResponse;
+        // If we didn't find a match in the cache, use the network.
+        return new Response (null, { status: 204, url: './API' })
+      })(),
     )
   }
 })
