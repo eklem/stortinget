@@ -10,21 +10,64 @@ const broadcastMeta = new BroadcastChannel('meta_app_serviceworker')
 
 /* ### skip waiting for next cycle to upgrade service worker */
 let coreAssets = [
-	'./API'
+	'./API',
+  './app.js',
+  './idb-keyval.js',
+  './kelp.js',
+  './sw.js',
+  'https://esm.sh/@arrow-js/core',
+  './css/kelp.css',
+  './css/style.css',
+  './img/icon-avstemming-32-32.svg',
+  './img/icon-avvist-16-16.svg',
+  './img/icon-avvist-24-24.svg',
+  './img/icon-avvist-32-32.svg',
+  './img/icon-down-up-32-32.svg',
+  './img/icon-ferdig-16-16.svg',
+  './img/icon-ferdig-24-24.svg',
+  './img/icon-ferdig-32-32.svg',
+  './img/icon-filter-32.svg',
+  './img/icon-fylke-32-32.svg',
+  './img/icon-hashtag-32-32.svg',
+  './img/icon-hjelp-32-32.svg',
+  './img/icon-info-32-32.svg',
+  './img/icon-komite-32-32.svg',
+  './img/icon-laster-24-24.svg',
+  './img/icon-laster-32-32.svg',
+  './img/icon-logo-48-48.svg',
+  './img/icon-logo-192-192.png',
+  './img/icon-logo-512-512.png',
+  './img/icon-oppsett-32-32.svg',
+  './img/icon-parti-32-32.svg',
+  './img/icon-representant-32-32.svg',
+  './img/icon-sak-32-32.svg',
+  './img/icon-sesjon-16-16.svg',
+  './img/icon-sesjon-24-24.svg',
+  './img/icon-sesjon-32-32.svg',
+  './img/icon-sesjon-legg-til-32-32.svg',
+  './img/icon-soek-32-32.svg',
+  './img/icon-soek-nullstill-32-32.svg',
+  './img/icon-soeppelkasse-32-32.svg',
+  './img/icon-vedtatt-16-16.svg',
+  './img/icon-vedtatt-24-24.svg',
+  './img/icon-vedtatt-32-32.svg',
+  './favicon.ico',
+  './',
+  './index.html',
+  './manifest.webmanifest'
 ]
 
 self.addEventListener('install', (event) => {
+  
   // The promise that skipWaiting() returns can be safely ignored.
   self.skipWaiting()
-
+  
   // Cache core assets
 	event.waitUntil(caches.open('app').then(function (cache) {
 		for (let asset of coreAssets) {
 			cache.add(new Request(asset))
-      console.log('let asset...')
 		}
-    console.log('return cache: ' + cache)
-		return cache;
+		return cache
 	}))
 
   // Perform any other actions required for your
