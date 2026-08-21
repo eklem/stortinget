@@ -18,6 +18,6 @@
   "start_url": "./index.html",
   "background_color": "#ffffff",
   "display": "fullscreen",
-  "scope": "/stortinget/",
+  "scope": "https://eklem.github.io/stortinget/",
   "theme_color": "#702146"
 }
