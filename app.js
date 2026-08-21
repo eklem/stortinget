@@ -31,7 +31,7 @@ if ("serviceWorker" in navigator) {
 
 
 /* ### ########################################################### ### */
-/* ### Mottak av meldinger fra app.js                              ### */
+/* ### Mottak av meldinger fra sw.js                              ### */
 
 broadcastMeta.onmessage = (message) => {
   console.log('app.js receiving message:')

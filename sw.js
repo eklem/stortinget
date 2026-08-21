@@ -29,22 +29,6 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
 });
 
-// /* ### Receiving messages */
-// broadcastMeta.addEventListener('message', (event) => {
-//   console.log(event)
-//   console.log('sw.js receiving message:' + event.data)
-//   broadcastMeta.postMessage('søketermer mottatt, og nå "returnert"')
-// })
-
-/* ### Messages error */
-broadcastMeta.addEventListener('messageerror', (error) => {
-  console.log('onMessageError: something happened in sw.js?:');
-  console.log(error);
-})
-
-/* ###  */
-/* ### flytt til service worker ### */
-
 /* ### ########################################################### ### */
 /* ### get Sessions, how to activate it can be figured out later.  ### */
 /* ### Check if new day or day past thisSession etc.               ### */
@@ -70,7 +54,7 @@ const getSessions = function (url) {
 // const commandUrl = /(\/API\?)/
 const switchRegex = /(?<=\/API\?)\w*(?=={)/
 const objectRegex = /{.*}$/
-const cacheUrlRegex = /.*(?=\?)/
+const apiUrlRegex = /.*(?=\?)/
 
 const getCommand = function (url) {
   let command = switchRegex.exec(url)
@@ -85,10 +69,10 @@ const getUrlJSON = function (url) {
   return urlJson
 }
 
-const getCacheUrl = function (url) {
-  const cacheUrl = cacheUrlRegex.exec(url)
-  console.log('### ######### cache url: ' + cacheUrl)
-  return cacheUrl
+const getApiUrl = function (url) {
+  const apiUrl = apiUrlRegex.exec(url)
+  console.log('### ######### API URL: ' + apiUrl)
+  return apiUrl
 }
 
 /* ### ########################################################### ### */
@@ -101,7 +85,7 @@ self.addEventListener('fetch', function (event) {
   if (url.includes('API')) {
     let command = getCommand(url)
     let urlJson = getUrlJSON(url)
-    let apiUrl = getCacheUrl(url)
+    let apiUrl = getApiUrl(url)
     console.log('### Command: ' + command)
     console.log('### UrlJson: ' + JSON.stringify(urlJson))
     console.log('###  apiUrl: ' + apiUrl)
